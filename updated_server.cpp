@@ -145,7 +145,7 @@ static void do_something(int connfd){
             return;
         }
         char msg[32];
-        snprintf(msg,31,"Server-side Message no.%d",i);
+        snprintf(msg,sizeof(msg),"Server-side Message no.%d",i);
         writeonce(connfd,msg,strlen(msg));
         i++;
     }
